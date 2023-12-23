@@ -28,6 +28,16 @@ dolphin --help
 
 # Usage
 
+## API Keys
+
+Dolphin requires API keys to access the translation services. You can get them from your dashboard.
+
+Set the API keys as environment variables:
+
+```
+export OPENAI_API_KEY=SK-xxx
+```
+
 ## Prepare
 
 Dolphin requires a configuration file to desribe the translation strings and preferred options.
