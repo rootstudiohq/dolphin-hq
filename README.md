@@ -152,6 +152,10 @@ The path to the localization file. You can use `${LANGUAGE}` as the language pla
 
 The target languages to translate to.
 
+## Examples
+
+For more examples, please check the [Examples](https://github.com/therootlab/dolphin-examples) repo.
+
 ## Debugging
 
 ### Logs
