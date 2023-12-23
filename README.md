@@ -35,7 +35,7 @@ Dolphin requires API keys to access the translation services. You can get them f
 Set the API keys as environment variables:
 
 ```
-export OPENAI_API_KEY=SK-xxx
+export DOLPHIN_API_KEY=SK-xxx
 ```
 
 ## Prepare
