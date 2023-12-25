@@ -125,6 +125,14 @@ localizations:
 
 Language codes can be any commonly used ones, such as `en-US`, `ja`, `es`, etc. As long as it is supported by the translator.
 
+#### apiKey
+
+The API key to access the translation service. We recommend you to set it as an environment variable (`DOLPHIN_API_KEY`) instead of putting it in the configuration file for security reasons.
+
+```
+export DOLPHIN_API_KEY=SK-xxx
+```
+
 #### baseLanguage
 
 The source language of the strings, which is used to translate from.
