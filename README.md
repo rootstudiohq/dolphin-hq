@@ -38,6 +38,10 @@ Set the API keys as environment variables:
 export DOLPHIN_API_KEY=SK-xxx
 ```
 
+You can also set API key in the configuration file as described later in the [Configuration](#Configuration) section.
+
+Make sure you don't expose the key to the public to avoid unexpected cost.
+
 ## Prepare
 
 Dolphin requires a configuration file to desribe the translation strings and preferred options.
@@ -85,28 +89,33 @@ An interactive shell like below will guide you through the translation process.
 Configration file is a YAML file with the following structure:
 
 ```yaml
-baseLanguage: [language code]
+apiKey: [optional, api key]
 
-translator: [translator name]
+baseLanguage: [required, language code]
+
+translator: [required, translator name]
 # or
 translator:
-  agent: [translator name]
-  mode: [translator mode]
+  agent: [required, translator name]
+  mode: [required, translator mode]
 
-context: [context]
+skipExisting: [optional, boolean, skip translated strings]
+
+context: [optional, custom translation context]
+
 localizations:
-  - path: [path]
-    format: [format]
+  - path: [required, path to strings]
+    format: [required, string format]
     languages:
-      - [language code]
-      - [language code]
+      - [required, language code]
+      - [required, language code]
       ...
 
-  - path: [path]
-    format: [format]
+  - path: [required, path to strings]
+    format: [required, string format]
     languages:
-      - [language code]
-      - [language code]
+      - [required, language code]
+      - [required, language code]
       ...
 
   ...
@@ -129,6 +138,14 @@ Translator can be either a single string of the translator name, or an object wi
 Supported modes:
 
 - **interactive**: In interactive mode, after strings are translated, Dolphin will ask you to review the result to approve or ask the agent to refine. By default, this mode is not enabled.
+
+#### skipExisting
+
+If set to `true`, Dolphin will skip the strings that have been translated. By default, this option is not enabled. It is useful when you want to translate new strings only.
+
+Please note that this option checks language by language. For example, if you have a string targeting English and French, and you have translated the English one, Dolphin will still translate the French one.
+
+You can also pass "--skip-existing" option to the command line to override this option.
 
 #### context
 
