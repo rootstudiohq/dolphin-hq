@@ -23,14 +23,16 @@ brew install therootlab/tap/dolphin
 Check if the installation was successful:
 
 ```shell
-dolphin --help
+dolphin --version
 ```
 
 # Usage
 
 ## API Keys
 
-Dolphin requires API keys to access the translation services. You can get them from your dashboard.
+Dolphin requires API keys to access the translation services. You can get them from your dashboard on [dolphin website](https://dolphin.userconnect.us).
+
+**Be care, this is not openai key. During beta stage, you need request for api access by contacting hi@userconnect.us.**
 
 Set the API keys as environment variables:
 
