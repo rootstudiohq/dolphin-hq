@@ -26,6 +26,12 @@ Check if the installation was successful:
 dolphin --version
 ```
 
+To upgrade:
+```shell
+brew update
+brew upgrade therootlab/tap/dolphin
+```
+
 # Usage
 
 ## API Keys
