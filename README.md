@@ -30,9 +30,9 @@ dolphin --version
 
 ## API Keys
 
-Dolphin requires API keys to access the translation services. You can get them from your dashboard on [dolphin website](https://dolphin.userconnect.us).
+Dolphin requires API keys to access the translation services. You can get them from your dashboard on [dolphin website](https://dolphin.rootstudio.io).
 
-**Be care, this is not openai key. During beta stage, you need request for api access by contacting hi@userconnect.us.**
+**Be care, this is not openai key. During beta stage, you need request for api access by contacting hi@rootstudio.io**
 
 Set the API keys as environment variables:
 
@@ -56,7 +56,8 @@ translator:
   agent: openai
   mode: interactive
 localizations:
-  - path: TranditionalXcodeDemo/${LANGUAGE}.lproj/Localizable.strings
+  - id: hostapp
+    path: TranditionalXcodeDemo/${LANGUAGE}.lproj/Localizable.strings
     format: strings
     languages:
       - fr
@@ -106,14 +107,16 @@ skipExisting: [optional, boolean, skip translated strings]
 context: [optional, custom translation context]
 
 localizations:
-  - path: [required, path to strings]
+  - id: [required, string, to identify the localization]
+    path: [required, path to strings]
     format: [required, string format]
     languages:
       - [required, language code]
       - [required, language code]
       ...
 
-  - path: [required, path to strings]
+  - id: [required, string, to identify the localization]
+    path: [required, path to strings]
     format: [required, string format]
     languages:
       - [required, language code]
@@ -162,6 +165,10 @@ You can also pass "--skip-existing" option to the command line to override this 
 The context of the translation. It will be used to provide more information to the translator.
 
 > For example, if you don't want specific words to skipped, you can say "xxx is a specific term which should be translated."
+
+#### id
+
+Arbitary unique id across localizations, used to identify the specific localization in the project.
 
 #### format
 
