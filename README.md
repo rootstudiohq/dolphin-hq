@@ -204,4 +204,4 @@ By default, shell wil only show the major output. To see more details, you can c
 
 ### Exported Strings
 
-Dolphin will export the translated strings to the `export` folder in the system temporary directory, which will be displayed in the shell output. You can check if the exported strings are correct there.
+Dolphin will export the translated strings to the `.dolphin` folder in the same directory of the configuration file. You can check if the exported strings are correct there.
